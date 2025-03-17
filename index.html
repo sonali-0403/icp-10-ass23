@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+      body{
+        background-color:rgb(157, 171, 202);
+      }
+.container {
+    border: 2px solid black;
+    width: 320px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+
+.dice {
+    display: block;
+    margin: 10px auto;
+    height: 150px;
+}
+
+.btn {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+
+@media screen and (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
+    .dice {
+        height: 120px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Dice Roller</h1>
+        <img src="dice.jpg" height="200px" class="dice" alt="dice" id="imgdice">
+        <button class="btn" onclick="rolldice()">Roll Dice</button>
+    </div>
+    <script>
+        function rolldice() {
+            const min = 1;
+            const max = 6;
+            const random = Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(random);
+
+            const imgdice = document.getElementById("imgdice");
+
+            if(random==1){
+        imgdice.src='dice1.png';
+    }
+    else if(random==2){
+         imgdice.src='dice2.png'
+    }
+    else if(random==3){
+        imgdice.src='dice3.png';
+    }else if(random==4){
+         imgdice.src='dice4.png';
+   }else if(random==5){
+        imgdice.src='dice5.png';
+   }else if(random==6){
+         imgdice.src='dice6.png';
+   }
+        }
+    </script>
+</body>
+</html>
